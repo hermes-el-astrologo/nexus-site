@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<article class="post-content">
+    <div class="post-header">
+        <div class="post-meta">
+            <span class="post-date">{{ page.date | date: "%m.%d.%Y" }}</span>
+            <span class="post-readtime">{{ page.readtime }}</span>
+        </div>
+        <h1 class="post-title">{{ page.title }}</h1>
+        <p class="post-description">{{ page.description }}</p>
+    </div>
+    
+    <div class="post-body">
+        {{ content }}
+    </div>
+    
+    {% if page.pdf_file %}
+    <div class="post-download">
+        <a href="{{ page.pdf_file }}" class="btn btn-primary" download>📄 Descargar PDF</a>
+    </div>
+    {% elsif page.pdf_url %}
+    <div class="post-download">
+        <a href="{{ page.pdf_url }}" class="btn btn-primary" download>📄 Descargar PDF</a>
+    </div>
+    {% endif %}
+    
+    <div class="post-footer">
+        <a href="/" class="btn btn-secondary">← Volver al inicio</a>
+    </div>
+</article>

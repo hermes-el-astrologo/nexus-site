@@ -1,0 +1,56 @@
+# Site settings
+title: NEXUS
+description: "Explorando el código fuente del universo"
+url: "" # Netlify lo configurará automáticamente
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: /articulos/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /articulos/:title/
+  podcast:
+    output: true
+    permalink: /podcast/:title/
+  video:
+    output: true
+    permalink: /video/:title/
+  recursos:
+    output: true
+    permalink: /recursos/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "podcast"
+    values:
+      layout: "media"
+  - scope:
+      path: ""
+      type: "video"
+    values:
+      layout: "media"
+  - scope:
+      path: ""
+      type: "recursos"
+    values:
+      layout: "resource"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - README.md
