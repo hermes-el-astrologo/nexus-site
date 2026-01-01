@@ -35,7 +35,9 @@ layout: default
                 <p>{{ post.description }}</p>
                 <div class="card-actions">
                     <a href="{{ post.url }}" class="btn btn-primary">Leer →</a>
-                    {% if post.pdf_url %}
+                    {% if post.pdf_file %}
+                    <a href="{{ post.pdf_file }}" class="btn btn-secondary">📄 PDF</a>
+                    {% elsif post.pdf_url %}
                     <a href="{{ post.pdf_url }}" class="btn btn-secondary">📄 PDF</a>
                     {% endif %}
                 </div>
@@ -130,7 +132,11 @@ layout: default
                 <h3>{{ resource.title }}</h3>
                 <p>{{ resource.description }}</p>
                 <div class="card-actions">
+                    {% if resource.pdf_file %}
+                    <a href="{{ resource.pdf_file }}" class="btn btn-primary" download>⬇ Descargar PDF</a>
+                    {% elsif resource.pdf_url %}
                     <a href="{{ resource.pdf_url }}" class="btn btn-primary" download>⬇ Descargar PDF</a>
+                    {% endif %}
                 </div>
             </article>
             {% endfor %}

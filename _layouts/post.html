@@ -16,7 +16,11 @@ layout: default
         {{ content }}
     </div>
     
-    {% if page.pdf_url %}
+    {% if page.pdf_file %}
+    <div class="post-download">
+        <a href="{{ page.pdf_file }}" class="btn btn-primary" download>📄 Descargar PDF</a>
+    </div>
+    {% elsif page.pdf_url %}
     <div class="post-download">
         <a href="{{ page.pdf_url }}" class="btn btn-primary" download>📄 Descargar PDF</a>
     </div>

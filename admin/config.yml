@@ -18,7 +18,8 @@ collections:
       - {label: "Tiempo de Lectura", name: "readtime", widget: "string", default: "10 min"}
       - {label: "Descripción Corta", name: "description", widget: "text"}
       - {label: "Contenido", name: "body", widget: "markdown"}
-      - {label: "PDF Adjunto (URL)", name: "pdf_url", widget: "string", required: false}
+      - {label: "Subir PDF (opcional)", name: "pdf_file", widget: "file", required: false}
+      - {label: "O URL del PDF", name: "pdf_url", widget: "string", required: false}
       
   - name: "podcast"
     label: "Podcasts"
@@ -59,4 +60,5 @@ collections:
       - {label: "Título", name: "title", widget: "string"}
       - {label: "Tipo", name: "type", widget: "select", options: ["Whitepaper", "Guía Técnica", "Manual", "Colección"]}
       - {label: "Descripción", name: "description", widget: "text"}
-      - {label: "URL del PDF", name: "pdf_url", widget: "string"}
+      - {label: "Subir PDF", name: "pdf_file", widget: "file", required: false, hint: "Sube tu PDF aquí"}
+      - {label: "O pega URL del PDF", name: "pdf_url", widget: "string", required: false, hint: "Si prefieres usar un enlace externo"}
